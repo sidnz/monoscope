@@ -2,7 +2,7 @@
   "name": "monoscope",
   "displayName": "MonoScope",
   "description": "Scope Quick Open (Ctrl+P) to your current project in monorepos (Nx, Turborepo, and more)",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "sidj",
   "icon": "icon.png",
   "repository": {
