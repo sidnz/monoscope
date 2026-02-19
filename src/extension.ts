@@ -81,7 +81,8 @@ export function activate(context: vscode.ExtensionContext) {
         items.push({
           label: path.basename(file.fsPath),
           description: relativePath,
-          detail: projectName,
+          iconPath: vscode.ThemeIcon.File,
+          resourceUri: file,
         });
       });
 
@@ -116,9 +117,7 @@ export function activate(context: vscode.ExtensionContext) {
     async () => {
       const newMode = await toggleScopeMode(context);
       updateStatusBar(newMode);
-      vscode.window.showInformationMessage(
-        `Quick Open scope changed to: ${newMode}`,
-      );
+      vscode.window.showInformationMessage(`MonoScope changed to: ${newMode}`);
     },
   );
 
