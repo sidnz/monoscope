@@ -1,0 +1,91 @@
+{
+  "name": "monoscope",
+  "displayName": "MonoScope",
+  "description": "Scope Quick Open (Ctrl+P) to your current project in monorepos (Nx, Turborepo, and more)",
+  "version": "0.0.1",
+  "publisher": "sidnz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sidnz/monoscope.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sidnz/monoscope/issues"
+  },
+  "homepage": "https://github.com/sidnz/monoscope#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "nx",
+    "monorepo",
+    "quick open",
+    "scope",
+    "search",
+    "files",
+    "turborepo",
+    "workspace",
+    "project"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "monoScope.open",
+        "title": "MonoScope: Open Current Project"
+      },
+      {
+        "command": "monoScope.toggleScope",
+        "title": "MonoScope: Toggle Scope Mode"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "monoScope.open",
+        "key": "ctrl+p",
+        "mac": "cmd+p",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "MonoScope",
+      "properties": {
+        "monoScope.defaultScope": {
+          "type": "string",
+          "enum": [
+            "project",
+            "workspace"
+          ],
+          "default": "project",
+          "description": "Default scope mode for Quick Open"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.19.33",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6"
+  }
+}
