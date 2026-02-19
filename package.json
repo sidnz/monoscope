@@ -2,8 +2,9 @@
   "name": "monoscope",
   "displayName": "MonoScope",
   "description": "Scope Quick Open (Ctrl+P) to your current project in monorepos (Nx, Turborepo, and more)",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "sidj",
+  "icon": "icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/sidnz/monoscope.git"
